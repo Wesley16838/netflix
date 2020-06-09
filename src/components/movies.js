@@ -39,9 +39,6 @@ function Moviespage(){
         localStorage.setItem(key2, JSON.stringify(result2));
         localStorage.setItem(key3, JSON.stringify(result3));
         setData((prevState) => {
-          console.log(result1);
-          console.log(result2);
-          console.log(result3);
           return({
             ...prevState,
             ing : result1,
