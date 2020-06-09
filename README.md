@@ -1,8 +1,6 @@
-# <a href="https://pricovfrontend.herokuapp.com/" target="_blank">PriCov</a>
+# <a href="#" target="_blank">Something Like Netflix</a>
 
-> Price Comparison Visualization
-
-> Visualize products' info from popular online shopping website
+> Something Like Netflix
 
 [![npm version](https://img.shields.io/npm/v/if-node-version.svg?style=flat)](https://www.npmjs.com/package/if-node-version)
 [![Node version](https://img.shields.io/node/v/if-node-version.svg?style=flat)](https://www.npmjs.com/package/if-node-version)
