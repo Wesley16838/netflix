@@ -52,7 +52,7 @@ $ npm start
 
 ## Team
 
-- <a href="https://github.com/Wesley16838" target="_blank">Wei-Hsuan, Wong</a>
+- <a href="https://github.com/Wesley16838" target="_blank">Wei-Hsuan Wong</a>
 
 ---
 

@@ -10,6 +10,20 @@ html, body{
     box-sizing: border-box;
     background: #1a1a1a;
 }
+.errorMsg, .loading{
+    background: #1a1a1a;
+    h2{
+        color: #fff;
+        margin: 0px;
+    }
+}
+.notfound{
+    background: #1a1a1a;
+    h1{
+        color: #fff;
+        margin: 0px;
+    }
+}
 .wrapper{
     background: rgb(26, 26, 26);
     color:#fff;

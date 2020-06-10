@@ -27,42 +27,56 @@ function MovieDetail(props){
         loading:false
       };
     const [movieData,setMovieData] = useState(INITIAL_STATE)
+    const [error, setError] = useState(false)
     useEffect(() => {
         const fetchData = async () => {
          axios.get(`http://www.omdbapi.com/?i=${id}&plot=full&apikey=f10f812b`)
             .then(result => {
-                setMovieData((prevState) => {
-                    return({
-                        ...prevState,
-                        movieTitle : result.data.Title,
-                        movieYear : result.data.Year,
-                        movieRate: result.data.Rated,
-                        movieRuntime: result.data.Runtime,
-                        movieReleased:result.data.Released,
-                        Genre:result.data.Genre.split(','),
-                        Director:result.data.Director,
-                        Writer:result.data.Writer.split(','),
-                        Actors:result.data.Actors.split(','),
-                        Plot:result.data.Plot,
-                        Language:result.data.Language,
-                        Country:result.data.Country.split(','),
-                        Awards:result.data.Awards,
-                        Poster:result.data.Poster,
-                        Ratings:result.data.Ratings,
-                        Metascore:result.data.Metascore,
-                        imdbRating:result.data.imdbRating,
-                        loading:true
-                    });
-                  })
+                if(result.data.Error == "Incorrect IMDb ID." || result.data.Error == "Error getting data."){
+                    setError(true)
+                }else{
+                    setMovieData((prevState) => {
+                        return({
+                            ...prevState,
+                            movieTitle : result.data.Title,
+                            movieYear : result.data.Year,
+                            movieRate: result.data.Rated,
+                            movieRuntime: result.data.Runtime,
+                            movieReleased:result.data.Released,
+                            Genre:result.data.Genre.split(','),
+                            Director:result.data.Director,
+                            Writer:result.data.Writer.split(','),
+                            Actors:result.data.Actors.split(','),
+                            Plot:result.data.Plot,
+                            Language:result.data.Language,
+                            Country:result.data.Country.split(','),
+                            Awards:result.data.Awards,
+                            Poster:result.data.Poster,
+                            Ratings:result.data.Ratings,
+                            Metascore:result.data.Metascore,
+                            imdbRating:result.data.imdbRating,
+                            loading:true
+                        });
+                      })
+                }
             })
             .catch(e => console.log(e))
         };
         fetchData();
       }, []); // eslint-disable-line react-hooks/exhaustive-deps
     const {movieTitle,  movieRate, movieRuntime, movieReleased, Genre, Director, Writer, Actors, Plot,  Poster, imdbRating, loading} = movieData;
+    if(error == true){
+        return(
+            <div className="errorMsg">
+                <h2>Incorrect IMDb ID</h2>
+            </div>  
+        )
+    }
     if(loading === false){
         return(
-                <p>Loading</p>
+            <div className="loading">
+                <h2>Loading</h2>
+            </div>  
         )
     }else{
         return(

@@ -12,6 +12,18 @@ html, body {
   box-sizing: border-box;
   background: #1a1a1a; }
 
+.errorMsg, .loading {
+  background: #1a1a1a; }
+  .errorMsg h2, .loading h2 {
+    color: #fff;
+    margin: 0px; }
+
+.notfound {
+  background: #1a1a1a; }
+  .notfound h1 {
+    color: #fff;
+    margin: 0px; }
+
 .wrapper {
   background: #1a1a1a;
   color: #fff; }
