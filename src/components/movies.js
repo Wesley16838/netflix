@@ -14,6 +14,7 @@ function Moviespage(){
   
     useEffect(() => {
         const fetchData = async () => {
+          //CACHE DATA IN REACT
           const cached = localStorage.getItem('cache');
           if(cached){
             const cached1 = localStorage.getItem('batman');
@@ -91,9 +92,9 @@ function Moviespage(){
               ]}
               mobileBreakpoint={480}
               loop>
-              {ing.map(item => (
-                 <Carousel.Item>
-                    <MovieCard title={item.Title} key={item.imdbID} movieId={item.imdbID} year={item.Year} poster = {item.Poster}/>
+              {ing.map((item,i) => (
+                 <Carousel.Item key={"ing"+i}>
+                    <MovieCard title={item.Title}  movieId={item.imdbID} year={item.Year} poster = {item.Poster}/>
                  </Carousel.Item>
               ))}
                </Carousel>
@@ -116,9 +117,9 @@ function Moviespage(){
               ]}
               mobileBreakpoint={480}
               loop>
-              {fav.map(item => (
-                <Carousel.Item>
-                  <MovieCard title={item.Title} key={item.imdbID} movieId={item.imdbID} year={item.Year} poster = {item.Poster}/>
+              {fav.map((item,i) => (
+                <Carousel.Item key={"fav"+i}>
+                  <MovieCard title={item.Title}  movieId={item.imdbID} year={item.Year} poster = {item.Poster}/>
                 </Carousel.Item>
               ))}
                </Carousel>
@@ -141,9 +142,9 @@ function Moviespage(){
               ]}
               mobileBreakpoint={480}
               loop>
-                {soon.map(item => (
-                  <Carousel.Item>
-                    <MovieCard title={item.Title} key={item.imdbID} movieId={item.imdbID} year={item.Year} poster = {item.Poster}/>
+                {soon.map((item,i) => (
+                  <Carousel.Item key={"soon"+i}>
+                    <MovieCard title={item.Title}  movieId={item.imdbID} year={item.Year} poster = {item.Poster}/>
                   </Carousel.Item>
                 ))}
               </Carousel>

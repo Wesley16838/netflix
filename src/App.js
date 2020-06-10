@@ -10,9 +10,7 @@ import MoviesPage from './components/movies'
 import MovieDetail from './components/movieDetail'
 
 function App() {
-  useEffect(() => {
-    return () => { localStorage.clear() }
-  })
+
   return (
     <Router>
         <div className="App">
@@ -21,7 +19,7 @@ function App() {
             <Route exact path="/detail/:moiveID" component={MovieDetail} />
           </Switch>
         </div>
-      </Router> 
+    </Router> 
   );
 }
 

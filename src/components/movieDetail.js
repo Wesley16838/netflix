@@ -62,34 +62,28 @@ function MovieDetail(props){
     const {movieTitle,  movieRate, movieRuntime, movieReleased, Genre, Director, Writer, Actors, Plot,  Poster, imdbRating, loading} = movieData;
     if(loading === false){
         return(
-            
                 <p>Loading</p>
-            
         )
     }else{
         return(
             <React.Fragment>
                 <div className="detailContainer">
-                    <div className="detail">
-                         
+                    <div className="detail">                  
                           <img alt={movieTitle} src={Poster}/>
                     </div>
                     <div className="detail">
                             <Link to="/">GO BACK</Link>
                             <p>Duration: {movieRuntime}</p>
-                            <h1>{movieTitle} <span>{movieRate}</span></h1>
-                        
+                            <h1>{movieTitle} <span>{movieRate}</span></h1>                      
                             <div className="rating">
                                 <img alt="star" src={star}/><p>{imdbRating}</p>
-                            </div>
-                            
+                            </div>                           
                             <div>
                                 {Genre.map((genre,i)=>{
                                     return <span key={i}>{genre}</span>
                                 })}
                             </div>
-                            <p>{Plot}</p>
-                        
+                            <p>{Plot}</p>                       
                             <Link to="#"><img alt="play" src={play}/></Link>
                     </div>
                     <div className="detail">
