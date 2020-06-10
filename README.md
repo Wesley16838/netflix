@@ -26,6 +26,10 @@
 
 - Clone this repo to your local machine using `https://github.com/Wesley16838/netflix.git`
 
+### Or Download Zip
+
+- Download Zip file from `https://github.com/Wesley16838/netflix`
+
 ### Setup
 
 > Open the terminal in the Visual Studio
