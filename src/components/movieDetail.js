@@ -58,9 +58,9 @@ function MovieDetail(props){
             .catch(e => console.log(e))
         };
         fetchData();
-      }, []); 
-    const {movieTitle, movieYear, movieRate, movieRuntime, movieReleased, Genre, Director, Writer, Actors, Plot, Language, Country, Awards, Poster, Ratings, Metascore, imdbRating, loading} = movieData;
-    if(loading == false){
+      }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    const {movieTitle,  movieRate, movieRuntime, movieReleased, Genre, Director, Writer, Actors, Plot,  Poster, imdbRating, loading} = movieData;
+    if(loading === false){
         return(
             
                 <p>Loading</p>
@@ -72,7 +72,7 @@ function MovieDetail(props){
                 <div className="detailContainer">
                     <div className="detail">
                          
-                          <img src={Poster}/>
+                          <img alt={movieTitle} src={Poster}/>
                     </div>
                     <div className="detail">
                             <Link to="/">GO BACK</Link>
@@ -80,7 +80,7 @@ function MovieDetail(props){
                             <h1>{movieTitle} <span>{movieRate}</span></h1>
                         
                             <div className="rating">
-                                <img src={star}/><p>{imdbRating}</p>
+                                <img alt="star" src={star}/><p>{imdbRating}</p>
                             </div>
                             
                             <div>
@@ -90,7 +90,7 @@ function MovieDetail(props){
                             </div>
                             <p>{Plot}</p>
                         
-                            <Link to="#"><img src={play}/></Link>
+                            <Link to="#"><img alt="play" src={play}/></Link>
                     </div>
                     <div className="detail">
                         <h2>Actors:</h2>

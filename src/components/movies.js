@@ -44,6 +44,7 @@ function Moviespage(){
           }
         };
         fetchData();
+        
       }, []);
 
     const onSetResult = (result1, key1,result2, key2,result3, key3) => {
@@ -62,7 +63,7 @@ function Moviespage(){
         });
     };
     const { ing, soon, fav, loading } = data;
-    if(loading == false){
+    if(loading === false){
       return(
         <React.Fragment>
           <div className="wrapper">Loading</div>
