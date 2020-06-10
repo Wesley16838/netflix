@@ -1,9 +1,17 @@
+@import "_config.scss";
+html, body{
+    height:100%;
+}
+#root{
+    height:100%;
+}
 .App{
-    background: rgb(70, 70, 70);
+    height:100%;
     box-sizing: border-box;
-    padding-bottom: 20px;
+    
 }
 .wrapper{
+    background: rgb(26, 26, 26);
     color:#fff;
     h2{
         margin: 0px 20px;
@@ -43,4 +51,161 @@
         }
     }
    
+}
+.detailContainer{
+    background-image: url('./../images/bgimage_new.png');
+    background-position: right ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-flow: row wrap;
+    box-sizing: border-box;
+    
+    color:#fff;
+    @include lg-width{           
+        height:100%;
+    }
+    @include sm-width{
+        height:max-content;
+    }
+
+    @include xs-width{
+        height:max-content;
+    }
+    .detail{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        position: relative;
+        .actors{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            p{
+                position: relative;
+                margin-right: 5px;
+               
+                &::after{
+                    content:",";
+                    position: absolute;
+                }
+                &:last-child{
+                    &::after{
+                        content:"";
+                        position: absolute;
+                    }
+                }
+            }
+        }
+        a{
+            margin-top: 10px;
+            width:fit-content;
+
+        }
+        &:nth-child(3){
+            order: 3;
+            width:33.3%;
+            padding: 0px 60px 0px 40px;
+            h2{
+                margin: 10px 0px 0px 0px;
+            }
+            p{
+                margin: 5px 0px;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                width: 2px;
+                height:100px;
+                background: #fff;
+                left: 0px;
+            }
+            @include lg-width{           
+                width:33.3%;
+            }
+            @include sm-width{
+                width:50%;
+            }
+       
+            @include xs-width{
+                &::before{
+                    content: "";
+                    position: absolute;
+                    width: 0px;
+                    height:100px;
+                    background: #fff;
+                    left: 0px;
+                }
+                width:100%;
+                padding-bottom: 15px;
+            }
+        }
+        &:nth-child(2){
+            order: 2;
+            width:33.3%;
+            padding:0px 40px;
+            a{
+                text-decoration: none;
+                color: #fff;
+                font-size: 24px;
+                font-weight: bold;
+                text-align: left;
+                transition: .3s ease-in-out;
+                &:hover{
+                    opacity: .6;
+                }
+            }
+            @include lg-width{
+                width:33.3%;
+            }
+            @include sm-width{
+                width:50%;
+            }
+       
+            @include xs-width{
+                width:100%;
+            }
+        }
+        &:nth-child(1){
+            order: 1;
+            width:33.3%;
+            align-items: center;
+            padding:0px 40px;
+            @include lg-width{
+                width:33.3%;
+            }
+            @include sm-width{
+                width:100%;
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+       
+            @include xs-width{
+                width:100%;
+                padding-top: 15px;
+                padding-bottom: 15px;
+            }
+        }
+        img{
+            width:fit-content;
+        }
+        h1{
+            margin: 0px;
+            span{
+                font-size: 16px;
+                font-weight: normal;
+            }
+        }
+        .rating{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            img{
+                height:fit-content;
+                margin-right: 10px;
+            }
+        }
+    }
 }

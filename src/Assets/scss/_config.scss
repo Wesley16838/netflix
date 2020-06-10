@@ -1,0 +1,47 @@
+/*Vars*/
+$white:#fff;
+$black:#000;
+$darkgray:#4A4A4A;
+$lightgray:#818181;
+$blue:#2B64FF;
+
+/*RWD*/
+$xs:0;
+$sm:576px;
+$md:768px;
+$lg:992px;
+$xl:1200px; //laptop 要照顧 1280 / 1366 / 1440
+$xxl:1480px; //大螢幕 要照顧 1680 / 1920
+$xxxl:1680px;
+//lg
+@mixin lg-width() {
+    @media all and (min-width: $lg) {
+                 @content;
+           }
+      }
+//sm
+@mixin sm-width() {
+    @media all and (min-width: $sm)and (max-width: $lg) {
+                 @content;
+           }
+      }
+//xs
+@mixin xs-width() {
+    @media all and (min-width: $xs)and (max-width: $sm) {
+                  @content;
+            }
+  }
+
+/*Mixins*/
+@mixin translateY($e) {
+    -webkit-transform: translateY($e);
+    -moz-transform: translateY($e);
+    transform: translateY($e)
+}
+
+@mixin transition($e) {
+    -webkit-transition: $e;
+    -moz-transition: $e;
+    transition: $e;
+}
+
